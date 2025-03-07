@@ -12,3 +12,4 @@ while error_count < 3:
         print('Fault')
         error_count += 1
 print('Game over\nYour score:', success_count)
+
