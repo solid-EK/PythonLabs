@@ -1,8 +1,9 @@
-word = input('Проверка на редкость слова\nВведите ваше слово:')
-if word.isalpha():
-    if 'ф' in word.lower():
-        print('Ого! Это редкое слово!')
-    else:
-        print('Эх, это не очень редкое слово...')
-else:
-    print('Введите слово')
+def magic_number(date):
+    try:
+        day, month, year = map(int, date.split('.'))
+        return day * month == year % 100
+    except ValueError:
+        return False
+
+
+print(magic_number('02.11.2022'))

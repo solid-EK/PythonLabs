@@ -1,6 +1,9 @@
-n = int(input('Сколько слов вы хотите ввести?'))
-stro = ''
-for i in range(n):
-    word = input('Введите слово')
-    stro = stro + word + ' '
-print(stro)
+def del3(n):
+    if n % 3 == 0:
+        return True
+    else:
+        return False
+
+
+print(del3(6))
+print(del3(28))
