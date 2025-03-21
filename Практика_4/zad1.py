@@ -1,4 +1,7 @@
-nums = ['1', '2', '13', '55', '64']
+import random
+nums = []
+for i in range(6):
+    nums.append(str(random.randint(1, 100)))
 guess = input('Отгадайте число ')
 if guess.isdigit():
     if guess in nums:
