@@ -8,7 +8,7 @@ print(f"Случайная шутка:\n{data['setup']}\n{data['punchline']}")
 def joke():
     response = requests.get('https://official-joke-api.appspot.com/random_joke')
     data = response.json()
-    out.config(text=f"Случайная шутка:\n{data['setup']}\n{data['punchline']}")
+    out.config(text=f"Случайная шутка:\n{data['setup']}\n{data['punchline']}\nПорядковый № шутки: {data['id']}")
 
 
 root = Tk()

@@ -2,24 +2,20 @@ import requests
 from tkinter import *
 
 
-# API-ключ для OpenWeatherMap (замени на свой)
 APPID = '8292f3dddd09300935af82bdf6481fe6'
 city = "Санкт-Петербург"
-# URL для получения данных о погоде
 URL = "http://api.openweathermap.org/data/2.5/weather"
 
-# Параметры запроса (например, для города Москва)
 params = {
-    "q": city,  # Название города
-    "appid": APPID,  # Твой API-ключ
-    "units": "metric",  # Единицы измерения (метрическая система)
-    "lang": "ru"  # Язык для ответа
+    "q": city,
+    "appid": APPID,
+    "units": "metric",
+    "lang": "ru"
 }
 
-# Выполнение запроса
+
 response = requests.get(URL, params=params)
 
-# Проверка успешности запроса и вывод данных
 if response.status_code == 200:
     data = response.json()
     print(f"Погода в городе {data['name']} ({data['sys']['country']}):")
@@ -74,6 +70,20 @@ def tokyo():
                        f"Ветер: {data['wind']['speed']} м/с\nВидимость: {data['visibility'] / 100}%")
 
 
+def by_name():
+    params = {
+        "q": entry1.get(),
+        "appid": APPID,
+        "units": "metric",
+        "lang": "ru"
+    }
+    response = requests.get(URL, params=params)
+    data = response.json()
+    output.config(text=f"Погода в городе {data['name']} ({data['sys']['country']}):\nТемпература: {data['main']['temp']}°C\n"
+                       f"Ощущается как: {data['main']['feels_like']}°C\nПогодные условия: {data['weather'][0]['description']}\n"
+                       f"Ветер: {data['wind']['speed']} м/с\nВидимость: {data['visibility'] / 100}%")
+
+
 def by_coords(lat, lon):
     params = {
         "lat": lat,
@@ -101,6 +111,8 @@ btn3 = Button(root, text='Токио', command=tokyo)
 btn3.pack()
 btn4 = Button(root, text='Узнать по координатам', command=lambda: by_coords(entry1.get(), entry2.get()))
 btn4.pack()
+btn5 = Button(root, text='Узнать по названию', command=by_name)
+btn5.pack()
 entry1 = Entry()
 entry1.pack(anchor=N)
 entry2 = Entry()
