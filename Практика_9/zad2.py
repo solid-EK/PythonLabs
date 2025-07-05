@@ -8,11 +8,9 @@ with open('Products.json', 'r+', encoding='utf-8') as file:
         weight = int(input('Вес: '))
         available = input('Доступность (True/False): ').lower() == 'true'
         data['products'].append({"name": name, "price": price, "available": available, "weight": weight})
-
-        # Перемещаем указатель в начало файла и сохраняем изменения
         file.seek(0)
         json.dump(data, file, indent=4, ensure_ascii=False)
-        file.truncate()  # Обрезаем файл, если он стал длиннее, чем фактически необходим
+        file.truncate()
 with open('Products.json', 'r', encoding='utf-8') as file:
     ld = json.load(file)
     for i in ld['products']:
