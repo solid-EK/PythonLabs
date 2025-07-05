@@ -1,0 +1,16 @@
+robot - робот
+book - книга
+monkey - обезьяна
+tango - танго
+hotel - отель
+fox - лиса
+whisper - шептун, слух, шорох
+walkie-talkie - рация
+cat - кошка
+dog - собака
+home - домашняя папка, дом
+mouse - мышь, манипулятор мышь
+to do - делать, изготавливать
+to make – изготавливать
+blade - клинок
+blade - меч

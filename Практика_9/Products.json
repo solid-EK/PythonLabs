@@ -1,0 +1,46 @@
+{
+    "products": [
+        {
+            "name": "Шоколад",
+            "price": 50,
+            "available": true,
+            "weight": 100
+        },
+        {
+            "name": "Кофе",
+            "price": 100,
+            "available": false,
+            "weight": 250
+        },
+        {
+            "name": "Чай",
+            "price": 70,
+            "available": true,
+            "weight": 50
+        },
+        {
+            "name": "Сникерс",
+            "price": 50,
+            "available": false,
+            "weight": 25
+        },
+        {
+            "name": "Балтика 3",
+            "price": 80,
+            "available": true,
+            "weight": 500
+        },
+        {
+            "name": "Зажигалка",
+            "price": 50,
+            "available": false,
+            "weight": 20
+        },
+        {
+            "name": "test",
+            "price": 12,
+            "available": true,
+            "weight": 21
+        }
+    ]
+}
