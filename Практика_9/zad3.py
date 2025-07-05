@@ -1,7 +1,6 @@
 with open('en-ru.txt', 'r', encoding='utf-8') as infile:
     ru_en_dict = {}
     for line in infile:
-        # Убираем пробелы
         line = line.strip()
         if ' - ' in line:
             eng_word, ru_words = line.split(' - ', 1)
