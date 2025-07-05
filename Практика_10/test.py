@@ -47,7 +47,8 @@ class IceCreamStand(Restaurant):
             self.flavors.append(new_flavor)
 
     def delete_flavor(self, del_flavor):
-        self.flavors.remove(del_flavor)
+        if del_flavor.isalpha():
+            self.flavors.remove(del_flavor)
 
     def check(self, srch_flav):
         if srch_flav in self.flavors:
@@ -80,5 +81,7 @@ if __name__ == '__main__':
   btn3.pack(anchor=S)
   btn4 = ttk.Button(root, text="Обновить рейтинг", command=lambda: morz.renew_rating(int(entry.get())))
   btn4.pack(anchor=E)
+  btn5 = ttk.Button(root, text="Удалить вкус", command=lambda: morz.delete_flavor(entry.get()))
+  btn5.pack(anchor=S)
   root.mainloop()
 
